@@ -1,4 +1,4 @@
-# 🏆 Datathon — Bilişsel Performans Skoru Tahmini
+Datathon — Bilişsel Performans Skoru Tahmini
 
 **Görev:** Regresyon  
 **Hedef değişken:** `bilissel_performans_skoru`  
@@ -9,8 +9,23 @@
 ---
 
 ## Yaklaşım Özeti
-
+Bu paket, en iyi public skoru veren final çözümü temiz ve tekrar üretilebilir şekilde teslim etmek için hazırlanmıştır.
 Final model tek bir model değil, birden fazla modelin OOF (Out-of-Fold) validation tahminleri üzerinden optimize edilmiş bir blend'idir.
+
+## Paket İçeriği
+
+Bu paket şunları içerir:
+
+- final modeli tekrar eğiten Python scriptleri
+- değerlendirme kriterlerine göre düzenlenmiş final solution overview notebook'u
+- ayrıntılı tek-notebook final pipeline
+- kısa pipeline çalıştırma wrapper'ı
+- final submission dosyası
+- model özeti
+- değerlendirme rehberi
+- requirements dosyası
+- veri dosyalarının nereye konacağını açıklayan `data/README.md`
+- Veri dosyaları organizasyon tarafından sağlandığı için pakete eklenmemiştir. Kod çalıştırılmadan önce `train.csv`, `test_x.csv` ve `sample_submission.csv` dosyaları `data/` klasörüne konmalıdır.
 
 ### Model Aileleri
 
@@ -58,12 +73,24 @@ Stratified 5-fold CV. Hedef değişken sürekli olduğu için fold'lar quantile 
 
 ---
 
+
 ## Kurulum
 
 Python 3.11 önerilir.
 
 ```bash
 pip install -r requirements.txt
+```
+
+Gerekli ana paketler:
+
+```text
+pandas
+numpy
+scikit-learn
+lightgbm
+xgboost
+catboost
 ```
 
 ---
